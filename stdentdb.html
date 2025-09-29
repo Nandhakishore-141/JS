@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Student Dashboard</title>
+    <link rel="stylesheet" href="studentdb.css">
+    <script src="stdentdb.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>My Student Dashboard</h1>
+    </header>
+
+    <div class="container">
+
+        <section class="card">
+            <h2>1. Profile & Info</h2>
+            <p>Enter your details and click save to see the JSON.</p>
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Name">
+            </div>
+            <div class="input-group">
+                <label for="birthYear">Birth Year:</label>
+                <input type="number" id="birthYear" placeholder="e.g., 2005" min="1900">
+            </div>
+            <div class="input-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" placeholder="City">
+            </div>
+            <button onclick="saveProfile()">Save Info & View JSON</button>
+            <p class="error" id="profileError"></p>
+
+            <h3>Info Stored (JSON)</h3>
+            <pre id="jsonDisplay">No data yet...</pre>
+        </section>
+
+        <section class="card">
+            <h2>2. Age & Greeting</h2>
+            <div class="output-box">
+                <p><strong>Age:</strong> <span id="ageDisplay">--</span></p>
+                <p><strong>Eligibility (18+):</strong> <span id="eligibilityDisplay">--</span></p>
+            </div>
+            <button onclick="displayGreeting()">Show Personalized Greeting</button>
+            <p id="greetingDisplay" class="output-message">Click above!</p>
+        </section>
+
+        <section class="card">
+            <h2>3. Basic Calculator</h2>
+            <div class="calc-grid">
+                <input type="number" id="num1" placeholder="Number 1">
+                <select id="operation">
+                    <option value="add">+</option>
+                    <option value="subtract">-</option>
+                    <option value="multiply">*</option>
+                    <option value="divide">/</option>
+                </select>
+                <input type="number" id="num2" placeholder="Number 2">
+                <button onclick="calculate()">=</button>
+            </div>
+            <p class="error" id="calcError"></p>
+            <p class="output-message"><strong>Result:</strong> <span id="calcResult">--</span></p>
+        </section>
+        
+        <section class="card">
+            <h2>4. Random Quote</h2>
+            <button onclick="displayQuote()">Get Quote</button>
+            <blockquote id="quoteDisplay">Click the button for motivation!</blockquote>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
